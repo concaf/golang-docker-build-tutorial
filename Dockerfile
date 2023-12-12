@@ -4,6 +4,8 @@
 # (https://docs.docker.com/build/building/multi-stage/)
 
 # Stage 1 (to create a "build" image, ~850MB)
+# TODO: either pull this and push to quay to avoid docker hub rate limiting
+# TODO: OR, push this to internal openshift registry and use that here
 FROM golang:1.20.5 AS builder
 # smoke test to verify if golang is available
 RUN go version
